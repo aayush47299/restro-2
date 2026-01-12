@@ -1,0 +1,20 @@
+import { ReactNode } from 'react';
+import { useLocation } from 'react-router-dom';
+import Navbar from './Navbar';
+import Footer from './Footer';
+
+interface LayoutProps {
+  children: ReactNode;
+}
+
+export default function Layout({ children }: LayoutProps) {
+  const location = useLocation();
+
+  return (
+    <div className="min-h-screen bg-black">
+      <Navbar />
+      <main>{children}</main>
+      <Footer />
+    </div>
+  );
+}
